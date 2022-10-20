@@ -6,10 +6,19 @@ export class ContactForm extends Component {
     name: '',
     number: '',
   };
+
   onFormSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
+    this.reset();
   };
+
+  reset() {
+    this.setState({
+      name: '',
+      number: '',
+    });
+  }
 
   onInputChange = e => {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
