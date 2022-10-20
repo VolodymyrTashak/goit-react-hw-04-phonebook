@@ -6,6 +6,6 @@ const Box = styled.div`
   padding-right: 300px;
   padding-bottom: 50px;
   padding-top: 50px;
-  background-color: #317f54;
+  background-color: #1b4c31;
 `;
 export default Box;

@@ -8,5 +8,5 @@ export const FilterLabel = styled.label`
   font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
-  color: #edca9f;
+  color: #dbd5d5;
 `;

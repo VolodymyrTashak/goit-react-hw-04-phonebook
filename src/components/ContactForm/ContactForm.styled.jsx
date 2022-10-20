@@ -13,7 +13,7 @@ export const FormLabel = styled.label`
   font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
-  color: #edca9f;
+  color: #dbd5d5;
 `;
 
 export const FormBtn = styled.button`
@@ -21,13 +21,14 @@ export const FormBtn = styled.button`
   margin-right: auto;
   margin-left: auto;
   border: none;
-  background-color: #cfe9ca;
+  background-color: #e7c587;
   border-radius: 5px;
   height: 40px;
   width: 140px;
   cursor: pointer;
   :hover {
-    background-color: #edca9f;
+    background-color: #a06e49ba;
+    color: #dbd5d5;
     transform: scale(1.2);
     transition: 500ms;
   }
