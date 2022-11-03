@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+
 import { ContactItem, ContactBtn, ContactInfo } from './ContactList.styled';
+
 export const ContactList = ({ formatting, onDeleteContact }) => {
   return (
     <ul>

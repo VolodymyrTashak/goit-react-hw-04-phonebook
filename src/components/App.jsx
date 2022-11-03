@@ -1,15 +1,17 @@
-import { nanoid } from 'nanoid';
 import React, { useState, useEffect } from 'react';
-import Box from './Box/Box.styled';
+import { nanoid } from 'nanoid';
+
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
+import { localStorageGetItem, localStorageSetItem } from 'utils/localeStorage';
+
+import Box from './Box/Box.styled';
 import { Text, Title } from './App.styled';
 
 export const App = () => {
-  const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
   const [contacts, setContacts] = useState(
-    parsedContacts ?? [
+    localStorageGetItem('contacts') ?? [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
@@ -17,10 +19,6 @@ export const App = () => {
     ]
   );
   const [filter, setFilter] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   const onFilter = e => {
     setFilter(e.currentTarget.value);
@@ -50,6 +48,10 @@ export const App = () => {
   };
 
   const formatting = filterContact();
+
+  useEffect(() => {
+    localStorageSetItem('contacts', contacts);
+  }, [contacts]);
 
   return (
     <Box>

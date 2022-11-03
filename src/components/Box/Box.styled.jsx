@@ -8,5 +8,3 @@ const Box = styled.div`
   padding-top: 50px;
 `;
 export default Box;
-
-// background-color: #1b4c31;
